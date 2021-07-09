@@ -1,6 +1,10 @@
 # Notes App
 
-A notes app built with ReactJS. Live demo [HERE](https://dragostemelie.go.ro/projects/notes-app/).
+A notes app built with ReactJS. Each note can have some tasks. Each task can be active or disabled with a click. The app uses `localStorage` to hold the notes data.
+
+Live demo [HERE](https://dragostemelie.go.ro/projects/notes-app/).
+
+It is still a work in progress!
 
 ## Install and start
 
@@ -10,8 +14,6 @@ cd notes-app/
 npm install
 npm start
 ```
-
-The app uses `localStorage` to hold the notes data. It is still a work in progress.
 
 ## Screenshot
 
