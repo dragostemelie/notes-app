@@ -15,4 +15,4 @@ The app uses `localStorage` to hold the notes data. It is still a work in progre
 
 ## Screenshot
 
-![Notes screenshot](https://github.com/dragostemelie/notes-app/raw/main/screenshot.png)
+![Notes screenshot](https://github.com/dragostemelie/notes-app/raw/main/screenshot.jpg)
