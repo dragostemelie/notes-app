@@ -4,8 +4,6 @@ A notes app built with ReactJS. Each note can have some tasks. Each task can be 
 
 Live demo [HERE](https://dragostemelie.go.ro/projects/notes-app/).
 
-It is still a work in progress!
-
 ## Install and start
 
 ```bash
