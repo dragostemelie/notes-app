@@ -67,7 +67,6 @@ export default function Notes() {
   }
 
   const handleDeleteTask = taskIndex => {
-    console.log(taskIndex)
     const newNotes = [...notes]
     newNotes[selectedNote].tasks.splice(taskIndex, 1)
     setNotes(newNotes)
