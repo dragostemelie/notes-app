@@ -21,7 +21,7 @@ export function Note({ add, active, error, title, taskCount, onSubmit, onSelect,
       {/* NORMAL NOTE */}
       {!add && (
         <>
-          <ListIcon />
+          <ListIcon active={active} />
           <Title href="#" onClick={onSelect} active={active}>
             {title}
             {taskCount && <Counter>{taskCount}</Counter>}

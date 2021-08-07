@@ -1,13 +1,22 @@
-export const ListIcon = () => (
+export const LogoIcon = () => (
   <svg
-    aria-hidden="true"
     focusable="false"
-    data-prefix="fas"
-    data-icon="list-ul"
-    className="list-icon"
-    role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 448 512"
+    className="logo-icon"
+  >
+    <path
+      fill="currentColor"
+      d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-120.569 95.196a15.89 15.89 0 0 1-7.431 4.195v-95.509h95.509a15.88 15.88 0 0 1-4.195 7.431l-83.883 83.883zM416 80v239.988H312c-13.255 0-24 10.745-24 24v104H48c-8.837 0-16-7.163-16-16V80c0-8.837 7.163-16 16-16h352c8.837 0 16 7.163 16 16z"
+    ></path>
+  </svg>
+)
+export const ListIcon = ({ active }) => (
+  <svg
+    focusable="false"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
+    className={active ? "list-icon active" : "list-icon"}
   >
     <path
       fill="currentColor"
@@ -18,14 +27,10 @@ export const ListIcon = () => (
 
 export const CircleIcon = () => (
   <svg
-    aria-hidden="true"
     focusable="false"
-    data-prefix="far"
-    data-icon="circle"
-    className="circle-icon"
-    role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
+    className="circle-icon"
   >
     <path
       fill="currentColor"
@@ -35,14 +40,10 @@ export const CircleIcon = () => (
 )
 export const CheckedIcon = () => (
   <svg
-    aria-hidden="true"
     focusable="false"
-    data-prefix="fas"
-    data-icon="check-circle"
-    className="checked-icon"
-    role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
+    className="checked-icon"
   >
     <path
       fill="currentColor"
@@ -53,14 +54,10 @@ export const CheckedIcon = () => (
 
 export const PlusIcon = () => (
   <svg
-    aria-hidden="true"
     focusable="false"
-    data-prefix="fas"
-    data-icon="plus"
-    className="plus-icon"
-    role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 448 512"
+    className="plus-icon"
   >
     <path
       fill="currentColor"
@@ -71,14 +68,10 @@ export const PlusIcon = () => (
 
 export const PenIcon = () => (
   <svg
-    aria-hidden="true"
     focusable="false"
-    data-prefix="fas"
-    data-icon="pen"
-    className="pen-icon"
-    role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
+    className="pen-icon"
   >
     <path
       fill="currentColor"
@@ -89,14 +82,10 @@ export const PenIcon = () => (
 
 export const DeleteIcon = ({ onClick }) => (
   <svg
-    aria-hidden="true"
     focusable="false"
-    data-prefix="far"
-    data-icon="trash-alt"
-    className="delete-icon"
-    role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 448 512"
+    className="delete-icon"
     onClick={onClick}
   >
     <path
@@ -108,12 +97,8 @@ export const DeleteIcon = ({ onClick }) => (
 
 export const CloseIcon = ({ onClick }) => (
   <svg
-    aria-hidden="true"
     focusable="false"
-    data-prefix="far"
-    data-icon="times-circle"
     className="close-icon"
-    role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
     onClick={onClick}
@@ -127,12 +112,8 @@ export const CloseIcon = ({ onClick }) => (
 
 export const CaretIcon = () => (
   <svg
-    aria-hidden="true"
     focusable="false"
-    data-prefix="fas"
-    data-icon="angle-up"
     className="caret-icon"
-    role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 320 512"
   >

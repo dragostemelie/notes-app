@@ -8,6 +8,9 @@ export const Container = styled.div`
   max-width: 900px;
   min-height: 500px;
   align-items: stretch;
+  & svg {
+    height: 1em;
+  }
   @media (max-width: 767px) {
     flex-direction: column;
     width: 100%;
@@ -34,6 +37,12 @@ export const Section = styled.section`
     border-radius: 0 1rem 1rem 0;
     justify-content: flex-start;
     flex: 2;
+  }
+  &.extended {
+    border-radius: 1rem;
+  }
+  &.hidden {
+    display: none;
   }
   @media (max-width: 767px) {
     border-radius: 0 !important;

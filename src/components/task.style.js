@@ -38,6 +38,7 @@ export const Name = styled(P)`
   text-decoration: ${({ checked }) => (checked ? "line-through" : "none")};
   flex: 1;
   cursor: pointer;
+  word-break: break-all;
 `
 export const NewTask = styled.input`
   font-size: 1.5em;
@@ -49,6 +50,8 @@ export const NewTask = styled.input`
   border-bottom: 2px solid white;
   outline: none;
   flex: 1;
+  max-width: 100%;
+  text-transform: uppercase;
   &::placeholder {
     color: ${colors.text.light};
     font-size: 0.9em;

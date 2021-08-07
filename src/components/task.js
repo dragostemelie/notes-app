@@ -12,8 +12,9 @@ export const Task = ({ addTask, checked, name, onCheck, onDelete, onSubmit, onCl
           <NewTask
             id="new-task"
             placeholder="New task"
-            onKeyDown={(e) => e.key === "Enter" && onSubmit()}
+            onKeyDown={e => e.key === "Enter" && onSubmit()}
             autoComplete="off"
+            autoFocus={true}
           />
           <CloseIcon onClick={onClose} />
           {error && <Error>{error}</Error>}

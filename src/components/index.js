@@ -1,4 +1,5 @@
 export {
+  LogoIcon,
   ListIcon,
   CircleIcon,
   CheckedIcon,

@@ -5,17 +5,24 @@ import { colors } from "./common.style"
 export const Container = styled.div`
   position: relative;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   & svg {
     height: 1em;
-    color: white;
+    color: ${colors.text.light};
+    &.active {
+      color: white;
+    }
     &.plus-icon {
       width: 1em !important;
       color: ${colors.text.light};
     }
     &.delete-icon {
       height: 1.2em;
+      transition: color 300ms ease-in-out;
+      &:hover,
+      &:active {
+        color: white;
+      }
     }
   }
 `
@@ -29,15 +36,17 @@ export const IconWrapper = styled.span`
 export const Title = styled(A)`
   font-size: 1.25rem;
   font-weight: 400;
-  color: white;
+  color: ${({ active }) => (active ? "white" : colors.text.light)};
   margin-left: 0.5em;
   position: relative;
   text-decoration: ${({ active }) => (active ? "underline" : "none")};
+  max-width: 180px;
 `
 
 export const Counter = styled.span`
   font-size: 0.75rem;
   font-weight: 600;
+  color: white;
   background-color: ${colors.bg.yellow};
   width: 1.5em;
   height: 1.5em;
@@ -61,6 +70,9 @@ export const Input = styled.input`
   border-bottom: 2px solid white;
   outline: none;
   max-width: 200px;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  overflow: hidden;
   &::placeholder {
     color: ${colors.text.light};
     padding-left: 0.25em;

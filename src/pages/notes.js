@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { H2, H3, Button, Note, Task, CaretIcon, PlusIcon } from "../components"
+import { LogoIcon, H2, H3, Button, Note, Task, CaretIcon, PlusIcon } from "../components"
 import { Container, Section } from "./notes.style"
 
 const readNotes = () => {
@@ -21,7 +21,8 @@ export default function Notes() {
       const newNotes = notes ? [...notes] : []
       newNotes.push({ title: noteTitle, tasks: [] })
       setNotes(newNotes)
-      localStorage.setItem("notes", JSON.stringify(notes))
+      setSelectedNote(newNotes.findIndex(note => note.title === noteTitle))
+      localStorage.setItem("notes", JSON.stringify(newNotes))
       document.querySelector("#new-note").value = ""
     } else {
       setNoteError("Invalid note!")
@@ -44,7 +45,7 @@ export default function Notes() {
   }
 
   const handleAddTask = () => {
-    const taskTitle = document.querySelector("#new-task").value
+    const taskTitle = document.querySelector("#new-task").value.toUpperCase()
     if (taskTitle.length > 2) {
       const newNotes = [...notes]
       newNotes[selectedNote].tasks.push({ title: taskTitle, checked: false })
@@ -75,10 +76,9 @@ export default function Notes() {
 
   return (
     <Container>
-      <Section className="left">
+      <Section className={notes?.length ? "left" : "left extended"}>
         <H2>
-          Notes app, <br />
-          ReactJS
+          <LogoIcon /> Notes app
         </H2>
         <H3>{notes?.[selectedNote]?.title ? "MY NOTES" : "ADD A NOTE"}</H3>
         {notes &&
@@ -94,7 +94,7 @@ export default function Notes() {
           ))}
         <Note add onSubmit={handleAddNote} error={noteError} />
       </Section>
-      <Section className="right">
+      <Section className={notes?.length ? "right" : "hidden"}>
         <H3>
           {notes?.[selectedNote].tasks.length
             ? notes[selectedNote].title + " TASKS:"

@@ -23,6 +23,9 @@ export const H2 = styled.h2`
   font-size: 2.25rem;
   line-height: 1.3;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 `
 export const H3 = styled.h3`
   font-size: 1.5rem;
