@@ -11,18 +11,16 @@ const readNotes = () => {
 export default function Notes() {
   const [notes, setNotes] = useState(() => readNotes())
   const [selectedNote, setSelectedNote] = useState(0)
-  // const [collapsedNotes, setCollapsedNotes] = useState(false)
   const [addTask, setAddTask] = useState(false)
   const [taskError, setTaskError] = useState(false)
   const [noteError, setNoteError] = useState(false)
 
-  const handleAddNote = () => {
-    const noteTitle = document.querySelector("#new-note").value.toUpperCase()
+  const handleAddNote = noteTitle => {
     if (noteTitle.length > 2) {
       const newNotes = notes ? [...notes] : []
       newNotes.push({ title: noteTitle, tasks: [] })
       setNotes(newNotes)
-      setSelectedNote(newNotes.findIndex((note) => note.title === noteTitle))
+      setSelectedNote(newNotes.findIndex(note => note.title === noteTitle))
       localStorage.setItem("notes", JSON.stringify(newNotes))
       document.querySelector("#new-note").value = ""
     } else {
@@ -32,7 +30,7 @@ export default function Notes() {
     }
   }
 
-  const handleDeleteNote = (noteIndex) => {
+  const handleDeleteNote = noteIndex => {
     const newNotes = [...notes]
     newNotes.splice(noteIndex, 1)
     setSelectedNote(Math.max(0, noteIndex - 1))
@@ -45,8 +43,7 @@ export default function Notes() {
     }
   }
 
-  const handleAddTask = () => {
-    const taskTitle = document.querySelector("#new-task").value.toUpperCase()
+  const handleAddTask = taskTitle => {
     if (taskTitle.length > 2) {
       const newNotes = [...notes]
       newNotes[selectedNote].tasks.push({ title: taskTitle, checked: false })
@@ -60,14 +57,14 @@ export default function Notes() {
     }
   }
 
-  const handleCheckTask = (taskIndex) => {
+  const handleCheckTask = taskIndex => {
     const newNotes = [...notes]
     newNotes[selectedNote].tasks[taskIndex].checked = !notes[selectedNote].tasks[taskIndex].checked
     setNotes(newNotes)
     localStorage.setItem("notes", JSON.stringify(newNotes))
   }
 
-  const handleDeleteTask = (taskIndex) => {
+  const handleDeleteTask = taskIndex => {
     const newNotes = [...notes]
     newNotes[selectedNote].tasks.splice(taskIndex, 1)
     setNotes(newNotes)
@@ -93,7 +90,7 @@ export default function Notes() {
               onDelete={() => handleDeleteNote(idx)}
             />
           ))}
-        <Note addNote onSubmit={handleAddNote} error={noteError} />
+        <Note addNote onAdd={handleAddNote} error={noteError} />
       </Section>
       <Section className={notes?.length ? "right" : "hidden"}>
         <Typography.H3>
@@ -116,10 +113,15 @@ export default function Notes() {
             <Task
               addTask
               onClose={() => setAddTask(false)}
-              onSubmit={handleAddTask}
+              onAdd={handleAddTask}
               error={taskError}
             />
-            <Button title="Add task" icon={<Icons.CaretUpIcon />} right onClick={handleAddTask} />
+            <Button
+              title="Add task"
+              icon={<Icons.CaretUpIcon />}
+              right
+              onClick={() => handleAddTask(document.querySelector("#new-task").value.toUpperCase())}
+            />
           </>
         ) : (
           notes && (

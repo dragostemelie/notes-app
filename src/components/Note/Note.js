@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { Icons } from "../UI"
 import { Container, Title, Counter, Input, Error, IconWrapper } from "./Note.style"
 
-export function Note({ addNote, active, error, title, taskCount, onSubmit, onSelect, onDelete }) {
+export function Note({ addNote, active, error, title, taskCount, onAdd, onSelect, onDelete }) {
+  const [newNoteTitle, setNewNoteTitle] = useState("")
   return (
     <Container addNote>
       {/* NEW NOTE */}
@@ -12,8 +13,15 @@ export function Note({ addNote, active, error, title, taskCount, onSubmit, onSel
           <Input
             id="new-note"
             placeholder="NEW NOTE"
-            onKeyDown={(e) => e.key === "Enter" && onSubmit()}
             autoComplete="off"
+            value={newNoteTitle}
+            onKeyUp={e => {
+              if (e.key === "Enter") {
+                onAdd(newNoteTitle)
+                setNewNoteTitle("")
+              }
+            }}
+            onChange={e => setNewNoteTitle(e.target.value.toUpperCase())}
           />
           {error && <Error>{error}</Error>}
         </>

@@ -33,15 +33,15 @@ export const Container = styled.div`
   }
 `
 export const Name = styled(Typography.P)`
-  font-size: 1.5em;
+  font-size: 1.1em;
   color: ${({ checked }) => (checked ? "white" : colors.text.dark)};
   text-decoration: ${({ checked }) => (checked ? "line-through" : "none")};
   flex: 1;
   cursor: pointer;
-  word-break: break-all;
+  word-break: break-word;
 `
 export const NewTask = styled.input`
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: 400;
   height: 1.5em;
   border: 0;
