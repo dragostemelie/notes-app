@@ -1,6 +1,6 @@
 import React from "react"
-import { CircleIcon, CheckedIcon, DeleteIcon, PenIcon, CloseIcon } from "../components"
-import { Container, Name, NewTask, Error } from "./task.style"
+import { Icons } from "../UI"
+import { Container, Name, NewTask, Error } from "./Task.style"
 
 export const Task = ({ addTask, checked, name, onCheck, onDelete, onSubmit, onClose, error }) => {
   return (
@@ -8,26 +8,26 @@ export const Task = ({ addTask, checked, name, onCheck, onDelete, onSubmit, onCl
       {/* NEW TASK */}
       {addTask && (
         <>
-          <PenIcon />
+          <Icons.PenIcon />
           <NewTask
             id="new-task"
             placeholder="New task"
-            onKeyDown={e => e.key === "Enter" && onSubmit()}
+            onKeyDown={(e) => e.key === "Enter" && onSubmit()}
             autoComplete="off"
             autoFocus={true}
           />
-          <CloseIcon onClick={onClose} />
+          <Icons.CloseIcon onClick={onClose} />
           {error && <Error>{error}</Error>}
         </>
       )}
       {/* NORMAL TASK */}
       {!addTask && (
         <>
-          {checked ? <CheckedIcon /> : <CircleIcon />}
+          {checked ? <Icons.CheckedIcon /> : <Icons.CircleIcon />}
           <Name onClick={onCheck} checked={checked}>
             {name}
           </Name>
-          <DeleteIcon onClick={onDelete} />
+          <Icons.DeleteIcon onClick={onDelete} />
         </>
       )}
     </Container>

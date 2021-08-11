@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { P, colors } from "./common.style"
+import { Typography, colors } from "../UI"
 
 export const Container = styled.div`
   position: relative;
@@ -32,7 +32,7 @@ export const Container = styled.div`
     }
   }
 `
-export const Name = styled(P)`
+export const Name = styled(Typography.P)`
   font-size: 1.5em;
   color: ${({ checked }) => (checked ? "white" : colors.text.dark)};
   text-decoration: ${({ checked }) => (checked ? "line-through" : "none")};

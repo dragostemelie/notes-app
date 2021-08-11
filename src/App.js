@@ -1,4 +1,4 @@
-import Notes from "./pages/notes"
+import Notes from "./pages/Notes"
 
 export default function App() {
   return <Notes />

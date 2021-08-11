@@ -110,16 +110,31 @@ export const CloseIcon = ({ onClick }) => (
   </svg>
 )
 
-export const CaretIcon = () => (
+export const CaretUpIcon = ({ onClick }) => (
   <svg
     focusable="false"
     className="caret-icon"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 320 512"
+    onClick={onClick}
   >
     <path
       fill="currentColor"
-      d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+      d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z"
+    ></path>
+  </svg>
+)
+export const CaretDownIcon = ({ onClick }) => (
+  <svg
+    focusable="false"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 320 512"
+    className="caret-icon"
+    onClick={onClick}
+  >
+    <path
+      fill="currentColor"
+      d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z"
     ></path>
   </svg>
 )

@@ -8,6 +8,14 @@ export const Container = styled.div`
   max-width: 900px;
   min-height: 500px;
   align-items: stretch;
+  & h2 {
+    display: flex;
+    & span {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
   & svg {
     height: 1em;
   }

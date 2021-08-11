@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Wrapper } from "./button.style"
+import { Container, Wrapper } from "./Button.style"
 
 export const Button = ({ title, icon, onClick, right }) => {
   return (

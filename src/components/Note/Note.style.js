@@ -1,6 +1,5 @@
 import styled from "styled-components"
-import { A } from "../components"
-import { colors } from "./common.style"
+import { Typography, colors } from "../UI"
 
 export const Container = styled.div`
   position: relative;
@@ -33,7 +32,7 @@ export const IconWrapper = styled.span`
   text-align: right;
 `
 
-export const Title = styled(A)`
+export const Title = styled(Typography.A)`
   font-size: 1.25rem;
   font-weight: 400;
   color: ${({ active }) => (active ? "white" : colors.text.light)};

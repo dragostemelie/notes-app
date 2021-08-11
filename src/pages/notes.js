@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { LogoIcon, H2, H3, Button, Note, Task, CaretIcon, PlusIcon } from "../components"
-import { Container, Section } from "./notes.style"
+import { Button, Icons, Typography, Note, Task } from "../components"
+import { Container, Section } from "./Notes.style"
 
 const readNotes = () => {
   let notes = JSON.parse(localStorage.getItem("notes"))
@@ -11,6 +11,7 @@ const readNotes = () => {
 export default function Notes() {
   const [notes, setNotes] = useState(() => readNotes())
   const [selectedNote, setSelectedNote] = useState(0)
+  // const [collapsedNotes, setCollapsedNotes] = useState(false)
   const [addTask, setAddTask] = useState(false)
   const [taskError, setTaskError] = useState(false)
   const [noteError, setNoteError] = useState(false)
@@ -21,7 +22,7 @@ export default function Notes() {
       const newNotes = notes ? [...notes] : []
       newNotes.push({ title: noteTitle, tasks: [] })
       setNotes(newNotes)
-      setSelectedNote(newNotes.findIndex(note => note.title === noteTitle))
+      setSelectedNote(newNotes.findIndex((note) => note.title === noteTitle))
       localStorage.setItem("notes", JSON.stringify(newNotes))
       document.querySelector("#new-note").value = ""
     } else {
@@ -31,7 +32,7 @@ export default function Notes() {
     }
   }
 
-  const handleDeleteNote = noteIndex => {
+  const handleDeleteNote = (noteIndex) => {
     const newNotes = [...notes]
     newNotes.splice(noteIndex, 1)
     setSelectedNote(Math.max(0, noteIndex - 1))
@@ -59,14 +60,14 @@ export default function Notes() {
     }
   }
 
-  const handleCheckTask = taskIndex => {
+  const handleCheckTask = (taskIndex) => {
     const newNotes = [...notes]
     newNotes[selectedNote].tasks[taskIndex].checked = !notes[selectedNote].tasks[taskIndex].checked
     setNotes(newNotes)
     localStorage.setItem("notes", JSON.stringify(newNotes))
   }
 
-  const handleDeleteTask = taskIndex => {
+  const handleDeleteTask = (taskIndex) => {
     const newNotes = [...notes]
     newNotes[selectedNote].tasks.splice(taskIndex, 1)
     setNotes(newNotes)
@@ -76,10 +77,11 @@ export default function Notes() {
   return (
     <Container>
       <Section className={notes?.length ? "left" : "left extended"}>
-        <H2>
-          <LogoIcon /> Notes app
-        </H2>
-        <H3>{notes?.[selectedNote]?.title ? "MY NOTES" : "ADD A NOTE"}</H3>
+        <Typography.H2>
+          <Icons.LogoIcon />
+          Notes app
+        </Typography.H2>
+        <Typography.H3>{notes?.[selectedNote]?.title ? "MY NOTES" : "ADD A NOTE"}</Typography.H3>
         {notes &&
           notes.map((note, idx) => (
             <Note
@@ -91,22 +93,22 @@ export default function Notes() {
               onDelete={() => handleDeleteNote(idx)}
             />
           ))}
-        <Note add onSubmit={handleAddNote} error={noteError} />
+        <Note addNote onSubmit={handleAddNote} error={noteError} />
       </Section>
       <Section className={notes?.length ? "right" : "hidden"}>
-        <H3>
+        <Typography.H3>
           {notes?.[selectedNote].tasks.length
             ? notes[selectedNote].title + " TASKS:"
             : "NO TASKS YET."}
-        </H3>
+        </Typography.H3>
         {notes &&
-          notes[selectedNote].tasks.map((task, idx) => (
+          notes[selectedNote].tasks.map((task, index) => (
             <Task
-              key={"task-" + idx}
+              key={"task-" + index}
               name={task.title}
               checked={task.checked}
-              onCheck={() => handleCheckTask(idx)}
-              onDelete={() => handleDeleteTask(idx)}
+              onCheck={() => handleCheckTask(index)}
+              onDelete={() => handleDeleteTask(index)}
             />
           ))}
         {addTask ? (
@@ -117,10 +119,12 @@ export default function Notes() {
               onSubmit={handleAddTask}
               error={taskError}
             />
-            <Button title="Add task" icon={<CaretIcon />} right onClick={handleAddTask} />
+            <Button title="Add task" icon={<Icons.CaretUpIcon />} right onClick={handleAddTask} />
           </>
         ) : (
-          notes && <Button title="New task" icon={<PlusIcon />} onClick={() => setAddTask(true)} />
+          notes && (
+            <Button title="New task" icon={<Icons.PlusIcon />} onClick={() => setAddTask(true)} />
+          )
         )}
       </Section>
     </Container>
