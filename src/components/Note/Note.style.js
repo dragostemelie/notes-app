@@ -14,6 +14,12 @@ export const Container = styled.div`
     &.plus-icon {
       width: 1em !important;
       color: ${colors.text.light};
+      cursor: pointer;
+      transition: color 300ms ease-in-out;
+      &:hover,
+      &:active {
+        color: white;
+      }
     }
     &.delete-icon {
       height: 1.2em;
@@ -66,7 +72,7 @@ export const Input = styled.input`
   background-color: transparent;
   margin-left: 0.5em;
   padding-right: 0.5em;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid ${colors.text.light};
   outline: none;
   max-width: 200px;
   text-transform: uppercase;
@@ -76,6 +82,10 @@ export const Input = styled.input`
     color: ${colors.text.light};
     padding-left: 0.25em;
     font-size: 0.9em;
+  }
+  transition: border-color 300ms ease-in-out;
+  &:focus {
+    border-color: white;
   }
 `
 

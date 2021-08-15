@@ -5,16 +5,20 @@ const H2 = styled.h2`
   font-size: 2.25rem;
   line-height: 1.3;
   margin: 0;
+  margin-bottom: 1em;
   display: flex;
   align-items: center;
   gap: 0.5em;
+  font-weight: 400;
 `
 const H3 = styled.h3`
   font-size: 1.5rem;
   line-height: 1.3;
   margin: 0;
-  margin-top: 1em;
-  margin-left: 0.5em;
+  display: flex;
+  align-items: center;
+  /* margin-top: 1em;
+  margin-left: 0.5em; */
   color: ${colors.text.light};
 `
 

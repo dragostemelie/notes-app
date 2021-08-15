@@ -5,11 +5,16 @@ import { Container, Title, Counter, Input, Error, IconWrapper } from "./Note.sty
 export function Note({ addNote, active, error, title, taskCount, onAdd, onSelect, onDelete }) {
   const [newNoteTitle, setNewNoteTitle] = useState("")
   return (
-    <Container addNote>
+    <Container>
       {/* NEW NOTE */}
       {addNote && (
         <>
-          <Icons.PlusIcon />
+          <Icons.PlusIcon
+            onClick={() => {
+              onAdd(newNoteTitle)
+              setNewNoteTitle("")
+            }}
+          />
           <Input
             id="new-note"
             placeholder="NEW NOTE"

@@ -52,12 +52,13 @@ export const CheckedIcon = () => (
   </svg>
 )
 
-export const PlusIcon = () => (
+export const PlusIcon = ({ onClick }) => (
   <svg
     focusable="false"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 448 512"
     className="plus-icon"
+    onClick={onClick}
   >
     <path
       fill="currentColor"
@@ -135,6 +136,33 @@ export const CaretDownIcon = ({ onClick }) => (
     <path
       fill="currentColor"
       d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z"
+    ></path>
+  </svg>
+)
+export const LogoutIcon = ({ onClick }) => (
+  <svg
+    focusable="false"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+    className="logout-icon"
+    onClick={onClick}
+  >
+    <path
+      fill="currentColor"
+      d="M160 217.1c0-8.8 7.2-16 16-16h144v-93.9c0-7.1 8.6-10.7 13.6-5.7l141.6 143.1c6.3 6.3 6.3 16.4 0 22.7L333.6 410.4c-5 5-13.6 1.5-13.6-5.7v-93.9H176c-8.8 0-16-7.2-16-16v-77.7m-32 0v77.7c0 26.5 21.5 48 48 48h112v61.9c0 35.5 43 53.5 68.2 28.3l141.7-143c18.8-18.8 18.8-49.2 0-68L356.2 78.9c-25.1-25.1-68.2-7.3-68.2 28.3v61.9H176c-26.5 0-48 21.6-48 48zM0 112v288c0 26.5 21.5 48 48 48h132c6.6 0 12-5.4 12-12v-8c0-6.6-5.4-12-12-12H48c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h132c6.6 0 12-5.4 12-12v-8c0-6.6-5.4-12-12-12H48C21.5 64 0 85.5 0 112z"
+    ></path>
+  </svg>
+)
+export const UserIcon = () => (
+  <svg
+    focusable="false"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 448 512"
+    className="user-icon"
+  >
+    <path
+      fill="currentColor"
+      d="M313.6 288c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zM416 464c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.4 0 70-16 89.6-16 56.5 0 102.4 45.9 102.4 102.4V464zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
     ></path>
   </svg>
 )

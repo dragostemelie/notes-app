@@ -13,6 +13,7 @@ export const Container = styled.div`
   transition: all 300ms ease-in-out;
   & svg {
     height: 1.2em;
+    overflow: unset;
     &.circle-icon,
     &.pen-icon {
       color: ${colors.primary};
@@ -43,6 +44,7 @@ export const Name = styled(Typography.P)`
 export const NewTask = styled.input`
   font-size: 1.1em;
   font-weight: 400;
+  max-width: calc(100% - 55px);
   height: 1.5em;
   border: 0;
   color: ${colors.text.dark};
@@ -50,11 +52,11 @@ export const NewTask = styled.input`
   border-bottom: 2px solid white;
   outline: none;
   flex: 1;
-  max-width: 100%;
   text-transform: uppercase;
   &::placeholder {
     color: ${colors.text.light};
     font-size: 0.9em;
+    font-weight: 300;
   }
 `
 
