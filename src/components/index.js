@@ -1,4 +1,4 @@
-export { Button, Icons, Typography, colors } from "./UI"
+export { Button, Input, Icons, Typography, colors } from "./UI"
 export { Note } from "./Note"
 export { Task } from "./Task"
 export { NotesSection } from "./NotesSection"

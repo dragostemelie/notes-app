@@ -4,6 +4,7 @@ import { colors } from "../colors"
 export const Container = styled.div`
   display: flex;
   justify-content: ${({ right }) => (right ? "flex-end" : "flex-start")};
+  align-self: ${({ right }) => (right ? "flex-end" : "flex-start")};
   margin: 0.5em;
 `
 
