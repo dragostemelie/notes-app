@@ -12,8 +12,6 @@ export const initialState = {
     },
   },
   user: {
-    name: "Guest",
-    token: "",
-    isLoggedIn: false,
+    name: "Dragos",
   },
 }

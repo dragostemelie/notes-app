@@ -1,8 +1,13 @@
 import { ACTION_TYPES } from "./actionTypes"
 
 export function reducer(state, action) {
-  // console.log(action.type)
+  // console.log(action.payload)
   switch (action.type) {
+    case ACTION_TYPES.INITIAL_NOTES:
+      return {
+        ...state,
+        notes: action.payload,
+      }
     case ACTION_TYPES.NOTE_ADDED:
       return {
         ...state,
@@ -30,7 +35,9 @@ export function reducer(state, action) {
     case ACTION_TYPES.NOTE_DELETED:
       return {
         ...state,
-        notes: [...state.notes.splice(action.payload, 1)],
+        notes: [
+          ...state.notes.filter((note, index) => index !== action.payload),
+        ],
         ui: {
           ...state.ui,
           notes: {

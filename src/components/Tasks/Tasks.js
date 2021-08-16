@@ -1,8 +1,8 @@
 import React from "react"
-import { Task, Button, Icons } from "../../components"
-import { Container, NewTask, TasksList, TasksTitle } from "./TasksSection.style"
+import { Task, Button, Icons } from ".."
+import { Container, NewTask, TasksList, TasksTitle } from "./Tasks.style"
 
-export const TasksSection = ({
+export const Tasks = ({
   tasksTitle,
   newTaskTitle,
   showTasks,

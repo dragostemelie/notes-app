@@ -1,5 +1,12 @@
 import { ACTION_TYPES } from "./actionTypes"
 // ### NOTES DATA ACTIONS ###
+export const initialNotes = notes => {
+  return {
+    type: ACTION_TYPES.INITIAL_NOTES,
+    payload: notes,
+  }
+}
+
 export const noteAdded = note => {
   if (note.length > 2)
     return {

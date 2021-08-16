@@ -1,5 +1,5 @@
 import React from "react"
-import { Note, Icons } from "../../components"
+import { Note, Icons } from ".."
 import {
   CollapseControl,
   Container,
@@ -9,9 +9,9 @@ import {
   NotesTitle,
   Username,
   Logout,
-} from "./NotesSection.style"
+} from "./Notes.style"
 
-export const NotesSection = ({
+export const Notes = ({
   notes,
   notesTitle,
   activeNote,

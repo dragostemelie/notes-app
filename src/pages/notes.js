@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { NotesSection, TasksSection } from "../components"
+import { Notes as NotesList, Tasks as TasksList } from "../components"
 import { Container } from "./Notes.style"
 
 export default function Notes({ state, dispatch, actions }) {
@@ -16,7 +16,7 @@ export default function Notes({ state, dispatch, actions }) {
     dispatch(actions.uiNewTaskInputChange(inputValue))
 
   useEffect(() => {
-    //Clear errors
+    //Clear UI errors
     if (state.ui.notes.noteError.length > 0)
       setTimeout(() => dispatch(actions.uiNoteErrorCleared()), 2000)
     if (state.ui.notes.taskError.length > 0)
@@ -26,7 +26,7 @@ export default function Notes({ state, dispatch, actions }) {
 
   return (
     <Container>
-      <NotesSection
+      <NotesList
         notes={state.notes}
         notesTitle={state.notes.length ? "NOTES" : "ADD A NOTE"}
         activeNote={state.ui.notes.selectedNote}
@@ -39,7 +39,7 @@ export default function Notes({ state, dispatch, actions }) {
         onCollapse={handleCollapseNotes}
         onLogout={() => console.log("logout")}
       />
-      <TasksSection
+      <TasksList
         tasksTitle={
           state.notes[state.ui.notes.selectedNote]?.tasks.length
             ? state.notes[state.ui.notes.selectedNote].title + " TASKS:"

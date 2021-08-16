@@ -1,4 +1,5 @@
 export const ACTION_TYPES = {
+  INITIAL_NOTES: "notes/initialNotes",
   NOTE_ADDED: "notes/noteAdded",
   NOTE_DELETED: "notes/noteDeleted",
   TASK_ADDED: "notes/taskAdded",
