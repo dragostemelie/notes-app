@@ -19,12 +19,12 @@ A notes app built with ReactJS. Each note can have some tasks. Each task can be 
                     "checked": false
                 },
             ]
-            },
+        },
         {
             "title": "NOTE 2",
             "tasks": []
         }
-    ],
+  ],
   ui: {
     notes: {
       selectedNote: 0,
