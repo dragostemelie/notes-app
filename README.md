@@ -1,29 +1,45 @@
 # Notes App
 
-A notes app built with ReactJS. Each note can have some tasks. Each task can be active or disabled with a click. The app uses `localStorage` to hold the notes data.
+A notes app built with ReactJS. Each note can have some tasks. Each task can be active or disabled with a click. The app uses `localStorage` to hold the notes data. It uses a global state and it can easily be scaled up to use an api.
 
-### Object structure:
+### State object structure:
 
 ```
-[
-    {
-        "title": "NOTE 1",
-        "tasks": [
-            {
-                "title": "TASK 1",
-                "checked": false
+{
+  notes: [
+          {
+            "title": "NOTE 1",
+            "tasks": [
+                {
+                    "title": "TASK 1",
+                    "checked": false
+                },
+                {
+                    "title": "TASK 2",
+                    "checked": false
+                },
+            ]
             },
-            {
-                "title": "TASK 2",
-                "checked": false
-            },
-        ]
+        {
+            "title": "NOTE 2",
+            "tasks": []
+        }
+    ],
+  ui: {
+    notes: {
+      selectedNote: 0,
+      addTask: false,
+      taskInput: "",
+      taskError: "",
+      noteInput: "",
+      noteError: "",
+      notesCollapsed: false,
     },
-    {
-        "title": "NOTE 2",
-        "tasks": []
-    }
-]
+  },
+  user: {
+    name: "User",
+  },
+}
 ```
 
 ### Live demo [HERE](https://dragostemelie.go.ro/projects/notes-app/).

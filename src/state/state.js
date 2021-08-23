@@ -12,6 +12,6 @@ export const initialState = {
     },
   },
   user: {
-    name: "Dragos",
+    name: "User",
   },
 }

@@ -37,7 +37,7 @@ export default function Notes({ state, dispatch, actions }) {
         onDelete={handleDeleteNote}
         onSelect={handleSelectNote}
         onCollapse={handleCollapseNotes}
-        onLogout={() => console.log("logout")}
+        onLogout={() => console.log("Logout")}
       />
       <TasksList
         tasksTitle={

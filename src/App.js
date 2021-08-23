@@ -4,7 +4,7 @@ import { initialState, reducer, actions } from "./state"
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  //Read local storage first time
+  //Read local storage on mount
   useEffect(() => {
     let notes = JSON.parse(localStorage.getItem("notes"))
     if (!notes) {
@@ -13,7 +13,7 @@ export default function App() {
     }
     dispatch(actions.initialNotes(notes))
   }, [])
-  //Write notes to local storage when state changes
+  //Write notes to local storage whenever state changes
   useEffect(
     () => localStorage.setItem("notes", JSON.stringify(state.notes)),
     [state]
